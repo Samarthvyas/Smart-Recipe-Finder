@@ -1,3 +1,14 @@
-"venv/"
-"__pycache__/"
-".env"
+# Ignore environment files and database
+.env
+recipes.db
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore instance folder if created
+instance/
+
+# Ignore IDE/project files
+.vscode/
+.idea/
