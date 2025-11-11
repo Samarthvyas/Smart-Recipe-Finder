@@ -149,6 +149,12 @@ def remove_favorite(id):
 
 # -------------------- RUN APP --------------------
 if __name__ == "__main__":
+    import os
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+    
+    # Detect the environment
+    port = int(os.environ.get("PORT", 5000))
+    debug = os.environ.get("RENDER", None) is None  # Debug only if not on Render
+    
+    app.run(host="0.0.0.0", port=port, debug=debug)
